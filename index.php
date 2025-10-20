@@ -21,7 +21,23 @@
 	</p>
 </div>
 
-<?php include("includes/footer.php");?>
+<?php include("includes/footer.php");
+ echo "hello mate2 ";
+include ("DbConnect.php");
+ $db= new Dbconnection();
+ $conn=$db->connect();
+ $db= new Dbconnection();
+ 
+ $conn=$db->connect();
+ $stm=$conn->prepare("select * from test");
+ $stm->execute();
+ $result=$stm->fetchAll(PDO::FETCH_ASSOC);
+ echo "<pre>";
+ print_r($result);
+ echo"</pre>";
+?>
+
+?>
 
 </body>
 </html>
